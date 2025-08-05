@@ -1,5 +1,10 @@
+import "./styles/App.css"
+import Header from "./components/Header"
+
 function App() {
-  return <>당신은 할 수 있습니다.</>;
+  return(
+    <Header></Header>
+  );
 }
 
 export default App;
