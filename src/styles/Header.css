@@ -83,6 +83,9 @@ img {
     height: 100px;
     padding-top: 10px;
     padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
 }
 .inputBox {
     padding: 1em;
@@ -135,4 +138,22 @@ img {
     max-width: 430px;
     margin: 0 auto;
     padding-top: 5em;
+}
+.buttonGroup{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-top: 20px;
+    gap:5px;
+}
+.buttonGroup button{
+    width: 50px;
+    height: 30px;
+    border: 1px solid black;
+}
+#modify{
+    background-color: greenyellow;
+}
+#delete{
+    background-color: rgb(255, 138, 138);
 }

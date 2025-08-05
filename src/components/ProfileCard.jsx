@@ -1,6 +1,6 @@
 import "../styles/Header.css";
 
-function ProfileCard({ name, team, imgUrl, job, tel, email }) {
+function ProfileCard({id, name, team, imgUrl, job, tel, email, handleModify, handleDelete }) {
 
     return (
         <div className="card">
@@ -13,10 +13,10 @@ function ProfileCard({ name, team, imgUrl, job, tel, email }) {
                 <p><b>{job}</b></p>
                 <p><b>tel.</b> {tel}</p>
                 <p><b>email.</b> {email}</p>
-            </div>
-            <div className="button-group">
-                <button onClick={handleModify}>수정</button>
-                <button onClick={handleDelete}>삭제</button>
+                <div className="buttonGroup">
+                    <button onClick={() => handleModify(id)} id="modify">수정</button>
+                    <button onClick={() => handleDelete(id)} id="delete">삭제</button>
+                </div>
             </div>
         </div>
     );
