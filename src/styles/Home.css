@@ -1,0 +1,57 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0 auto;
+    max-width: 430px;
+    background-color: #ededed;
+}
+#app{
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    height: auto;
+    min-height: 100%;
+    background-color: #fff;
+}
+.headerBox {
+    width: 100%;
+    max-width: 430px;
+    height: 3em;
+    background-color: #040404;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.navBar {
+    position: fixed;
+    top: 3em;
+    width: 100%;
+    max-width: 430px;
+    height: 2em;
+    background-color: #d3d3d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.Container {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    padding-top: 5em;
+}
+.title {
+    width: 100%;
+    text-align: center;
+    margin: 1em 0;
+}
+.list {
+    margin: 0 2em;
+}
+.navLink {
+    text-decoration: none;
+    color: #000;
+}

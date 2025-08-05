@@ -1,4 +1,3 @@
-import "./styles/App.css"
 import Home from "./pages/Home"
 import ProfileLayout from "./pages/ProfileLayout"
 import ProfileList from "./components/ProfileList"

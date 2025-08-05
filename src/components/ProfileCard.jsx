@@ -1,5 +1,3 @@
-import "../styles/Header.css";
-
 function ProfileCard({id, name, team, imgUrl, job, tel, email, handleModify, handleDelete }) {
 
     return (
