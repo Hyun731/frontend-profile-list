@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-function ProfileForm() {
+function ProfileForm({ cardData, setCardData }) {
     const nameRef = useRef(null)
     const teamRef = useRef(null)
     const jobRef = useRef(null)
@@ -22,32 +22,30 @@ function ProfileForm() {
             defaultImageRef.current.focus();
             return;
         }
+        setCardData([...cardData,
+            {
+                id: 1,
+                name: nameRef.current.value,
+                team: teamRef.current.value,
+                imgUrl: defaultImageRef ? defaultImageRef.current.value:reverseImageRef.current.value,
+                job: jobRef.current.value,
+                tel: phoneRef.current.value,
+                email: emailRef.current.value,
+            }
+        ])
 
     };
     return (
         <>
-            <h1 className="title">프로필 카드 리스트 만들기</h1>
-            <div>
+            <h1 className="title">프로필 카드 만들기</h1>
+            <div className='inputBox'>
                 <h2>정보를 입력해주세요.</h2>
-                <label htmlFor="name">Name</label>
-                <input type="text" id="name" placeholder="ex)권길현" ref={nameRef} />
-                <label htmlFor="team">Team</label>
-                <input type="text" id="team" placeholder="ex)PARADOX" ref={teamRef} />
-                <label htmlFor="job">Job</label>
-                <input type="text" id="job" placeholder="ex)Backend Developer" ref={jobRef} />
-                <label htmlFor="phone">Phone</label>
-                <input type="text" id="phone" placeholder="ex)010-0731-0731" ref={phoneRef} />
-                <label htmlFor="email">Email</label>
-                <input type="text" id="email" placeholder="ex)gilhyun.gwon0731@gmail.com" ref={emailRef} />
-                <label>Image</label>
-                <label>
-                    <input type="radio" name="image" value="default" ref={defaultImageRef} />
-                    Default
-                </label>
-                <label>
-                    <input type="radio" name="image" value="reverse" ref={reverseImageRef} />
-                    Reverse
-                </label>
+                <p><b>Name</b><input type="text" id="name" placeholder="ex)권길현" ref={nameRef} /></p>
+                <p><b>Team</b><input type="text" id="team" placeholder="ex)PARADOX" ref={teamRef} /></p>
+                <p><b>Job</b><input type="text" id="job" placeholder="ex)Backend Developer" ref={jobRef} /></p>
+                <p><b>Phone</b><input type="text" id="phone" placeholder="ex)010-0731-0731" ref={phoneRef} /></p>
+                <p><b>Email</b><input type="text" id="email" placeholder="ex)gilhyun.gwon0731@gmail.com" ref={emailRef} /></p>
+                <p><b>Image</b><input type="radio" name="image" value="/assets/PARADOX_default.png" ref={defaultImageRef} />Default<input type="radio" name="image" value="/assets/PARADOX_reverse.png"ref={reverseImageRef} />Reverse</p>
                 <input type="button" value="등록하기" onClick={focusInput} />
             </div>
         </>

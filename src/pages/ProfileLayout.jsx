@@ -5,7 +5,9 @@ function ProfileLayout() {
     return (
         <>
             <Header/>
-            <Outlet />
+            <div className='Container'>
+                <Outlet />
+            </div>
         </>
     );
 }
