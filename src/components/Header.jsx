@@ -1,28 +1,21 @@
 import "../styles/Header.css";
 import { Link } from 'react-router-dom';
 
-function Header() {
+function Header({textLists}) {
+    const textDate = textLists.map((text,index) => <li key={index}>{text}</li>)
     return (
         <>
-            <header class="headerBox">
+            <header className="headerBox">
                 <h1>Profile Card List</h1>
             </header>
-            <nav class="navBar">
-                <Link to="">Home</Link>
-                <Link to="/profile/list">Card List</Link>
-                <Link to="/profile/list">Make Card</Link>
+            <nav className="navBar">
+                <Link to="/" className="navLink">Home</Link>
+                <Link to="/profile/list" className="navLink">Card List</Link>
+                <Link to="/profile/form" className="navLink">Make Card</Link>
             </nav>
-            <div class="Container">
-                <h1 class="title">프로필 카드 리스트 만들기</h1>
-                <ul class="list">
-                    <li>Home : 홈화면을 볼 수 있다.</li>
-                </ul>
-                <ul class="list">
-                    <li>Card List : 카드 리스트를 볼 수 있다.</li>
-                </ul>
-                <ul class="list">
-                    <li>Make Card : 카드를 만들 수 있다.</li>
-                </ul>
+            <div className="Container">
+                <h1 className="title">프로필 카드 리스트 만들기</h1>
+                <ul className="list">{textDate}</ul>
             </div>
         </>
     )
