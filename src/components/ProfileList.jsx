@@ -1,16 +1,15 @@
 import "../styles/Header.css";
-import { Link } from 'react-router-dom';
 
-function Header() {
+function ProfileList() {
     return (
         <>
             <header class="headerBox">
                 <h1>Profile Card List</h1>
             </header>
             <nav class="navBar">
-                <Link to="">Home</Link>
-                <Link to="/profile/list">Card List</Link>
-                <Link to="/profile/list">Make Card</Link>
+                <a>Home</a>
+                <a>Card List</a>
+                <a>Make Card</a>
             </nav>
             <div class="Container">
                 <h1 class="title">프로필 카드 리스트 만들기</h1>
@@ -27,4 +26,4 @@ function Header() {
         </>
     )
 }
-export default Header
+export default ProfileList
