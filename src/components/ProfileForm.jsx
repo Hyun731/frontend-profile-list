@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { useNavigate } from "react-router-dom";
 
 function ProfileForm({ cardData, setCardData }) {
     const nameRef = useRef(null)
@@ -8,6 +9,8 @@ function ProfileForm({ cardData, setCardData }) {
     const emailRef = useRef(null)
     const defaultImageRef = useRef(null);
     const reverseImageRef = useRef(null);
+    const navigate = useNavigate();
+
     const focusInput = () => {
         const refs = [{ ref: nameRef, name: "이름" }, { ref: teamRef, name: "팀" }, { ref: jobRef, name: "직업" }, { ref: phoneRef, name: "전화번호" }, { ref: emailRef, name: "이메일" }]
         for (const ref of refs) {
@@ -22,9 +25,10 @@ function ProfileForm({ cardData, setCardData }) {
             defaultImageRef.current.focus();
             return;
         }
+        const newId = cardData.length > 0 ? Math.max(...cardData.map(card => card.id)) + 1: 1;
         setCardData([...cardData,
             {
-                id: 1,
+                id: newId,
                 name: nameRef.current.value,
                 team: teamRef.current.value,
                 imgUrl: defaultImageRef ? defaultImageRef.current.value:reverseImageRef.current.value,
@@ -33,7 +37,8 @@ function ProfileForm({ cardData, setCardData }) {
                 email: emailRef.current.value,
             }
         ])
-
+        navigate("/profile/list");
+        
     };
     return (
         <>
