@@ -56,3 +56,16 @@ html, body {
     text-decoration: none;
     color: #000;
 }
+
+.card {
+    width: 90%;
+    height: 11em;
+    margin: 0 auto;
+    background-color: beige;
+    border-radius: 16px;
+    border: black 1px solid;
+    display: flex;
+    gap: .5em;
+    padding: 1em;
+    box-sizing: border-box;
+}
