@@ -15,10 +15,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<ProfileLayout />}>
-          <Route path="list" element={<ProfileList cardData={cards} setCardData={setCardData}/>} />
-          <Route path="form" element={<ProfileForm cardData={cards} setCardData={setCardData}/>} />
-          <Route path="modify/:id" element={<ProfileModify cardData={cards} setCardData={setCardData}/>} />
+        <Route path="/profile" element={<ProfileLayout cardData={cards} setCardData={setCardData}/>}>
+          <Route path="list" element={<ProfileList/>} />
+          <Route path="form" element={<ProfileForm/>} />
+          <Route path="modify/:id" element={<ProfileModify/>} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,7 +1,8 @@
 import ProfileCard from "./ProfileCard";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useOutletContext } from "react-router-dom";
 
-function ProfileList({ cardData, setCardData }) {
+function ProfileList() {
+    const { cardData, setCardData } = useOutletContext();
     const navigate = useNavigate()
     const handleDelete = (id) => {
         setCardData(cardData.filter(card => card.id !== id))

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useOutletContext } from "react-router-dom";
 
-function ProfileForm({ cardData, setCardData }) {
+function ProfileForm() {
     const nameRef = useRef(null)
     const teamRef = useRef(null)
     const jobRef = useRef(null)
@@ -10,7 +10,7 @@ function ProfileForm({ cardData, setCardData }) {
     const defaultImageRef = useRef(null);
     const reverseImageRef = useRef(null);
     const navigate = useNavigate();
-
+    const { cardData, setCardData } = useOutletContext();
     const focusInput = () => {
         const refs = [{ ref: nameRef, name: "이름" }, { ref: teamRef, name: "팀" }, { ref: jobRef, name: "직업" }, { ref: phoneRef, name: "전화번호" }, { ref: emailRef, name: "이메일" }]
         for (const ref of refs) {

@@ -1,8 +1,9 @@
 import { useRef } from 'react';
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams,useOutletContext } from "react-router-dom";
 
-function ProfileForm({ cardData, setCardData }) {
+function ProfileForm() {
     const { id } = useParams();
+    const { cardData, setCardData } = useOutletContext();
     const user = cardData.find(card => card.id == id)
     console.log(user)
     const nameRef = useRef(null)
@@ -57,7 +58,7 @@ function ProfileForm({ cardData, setCardData }) {
                 <p><b>Phone</b><input type="text" id="phone" placeholder="ex)010-0731-0731" ref={telRef} defaultValue={user.tel} /></p>
                 <p><b>Email</b><input type="text" id="email" placeholder="ex)gilhyun.gwon0731@gmail.com" ref={emailRef} defaultValue={user.email} /></p>
                 <p><b>Image</b><input type="radio" name="image" defaultValue="/assets/PARADOX_default.png" ref={defaultImageRef} defaultChecked={user.imgUrl === "/assets/PARADOX_default.png"} readOnly />Default<input type="radio" name="image" defaultValue="/assets/PARADOX_reverse.png" ref={reverseImageRef} defaultChecked={user.imgUrl === "/assets/PARADOX_reverse.png"} readOnly />Reverse</p>
-                <input type="button" value="등록하기" onClick={focusInput} />
+                <input type="button" value="수정완료" onClick={focusInput} />
             </div>
         </>
     )
