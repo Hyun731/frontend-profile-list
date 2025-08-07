@@ -4,12 +4,12 @@ function Header() {
     return (
         <>
             <header className="headerBox">
-                <h1>Profile Card List</h1>
+                <h1>프로필 카드 리스트</h1>
             </header>
             <nav className="navBar">
-                <Link to="/" className="navLink">Home</Link>
-                <Link to="/profile/list" className="navLink">Card List</Link>
-                <Link to="/profile/form" className="navLink">Make Card</Link>
+                <Link to="/" className="navLink">홈</Link>
+                <Link to="/profile/list" className="navLink">카드 목록</Link>
+                <Link to="/profile/form" className="navLink">카드 만들기</Link>
             </nav>
         </>
     )

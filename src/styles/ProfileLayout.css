@@ -7,14 +7,18 @@
     width: 90%;
     height: 11em;
     margin: 0 auto;
-    background-color: beige;
+    background-color: rgb(237, 237, 237);
     border-radius: 16px;
     border: black 1px solid;
     display: flex;
     gap: .5em;
     padding: 1em;
     box-sizing: border-box;
-
+    transition: 0.3s;
+}
+.card:hover{
+    scale: 1.05;
+    transition: 0.3s;
 }
 img {
     overflow-clip-margin: content-box;
@@ -62,11 +66,19 @@ img {
     height: 50px;
     font-weight: bold;
     font-size: 20px;
+    transition: 0.3s;
+}
+.inputBox input[type=button] {
+    background-color: rgb(255, 255, 255);
 }
 .inputBox input[type=button]:hover {
     transition: 0.3s;
     cursor: pointer;
-    background-color: greenyellow;
+    background-color: rgb(177, 177, 177);
+    color: white;
+}
+img{
+    border-radius: 15px;
 }
 .inputBox p{
     align-items: center;
@@ -83,7 +95,7 @@ img {
     width: 100%;
     max-width: 430px;
     margin: 0 auto;
-    padding-top: 5em;
+    padding-top: 7em;
 }
 .buttonGroup{
     display: flex;
@@ -96,6 +108,12 @@ img {
     width: 50px;
     height: 30px;
     border: 1px solid black;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.buttonGroup button:hover{
+    scale: 1.1;
+    transition: 0.3s;
 }
 #modify{
     background-color: greenyellow;

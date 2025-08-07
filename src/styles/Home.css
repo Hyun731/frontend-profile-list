@@ -4,7 +4,7 @@ html, body {
     overflow-x: hidden;
     margin: 0 auto;
     max-width: 430px;
-    background-color: #ededed;
+    background-color: #bdf7b4;
 }
 #app{
     width: 100%;
@@ -17,31 +17,33 @@ html, body {
 .headerBox {
     width: 100%;
     max-width: 430px;
-    height: 3em;
-    background-color: #040404;
-    color: #fff;
+    height: 5em;
+    background-color: #d9ffce;
+    color: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
+    z-index: 1000;
 }
 .navBar {
     position: fixed;
-    top: 3em;
+    top: 5em;
     width: 100%;
     max-width: 430px;
     height: 2em;
-    background-color: #d3d3d3;
+    background-color: #e5e5e5;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    z-index: 1000;
 }
 .Container {
     width: 100%;
     max-width: 430px;
     margin: 0 auto;
-    padding-top: 5em;
+    padding-top: 7em;
 }
 .title {
     width: 100%;

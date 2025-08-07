@@ -25,6 +25,15 @@ const cardData = [
         job: "인턴",
         tel: "010-1234-5678",
         email: "paradox@gmail.com",
+    },
+    {
+        id: 4,
+        name: "권길현4",
+        team: "PARADOX",
+        imgUrl: "/assets/PARADOX_reverse.png",
+        job: "인턴",
+        tel: "010-1234-5678",
+        email: "paradox@gmail.com",
     }
 ]
 
