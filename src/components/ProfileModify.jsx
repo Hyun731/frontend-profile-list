@@ -29,22 +29,33 @@ function ProfileForm() {
             defaultImageRef.current.focus();
             return;
         }
-        setCardData(
-            cardData.map((card) =>
-                card.id == id
-                    ? {
-                        ...card,
-                        name: nameRef.current.value,
-                        team: teamRef.current.value,
-                        imgUrl: defaultImageRef.current.checked ? defaultImageRef.current.value: reverseImageRef.current.value,
-                        job: jobRef.current.value,
-                        tel: telRef.current.value,
-                        email: emailRef.current.value,
-                    }
-                    : card
-            )
-        );
-        navigate("/profile/list");
+        const updatedProfile = {
+        id: id, 
+        name: nameRef.current.value,
+        team: teamRef.current.value,
+        imgUrl: defaultImageRef.current.checked
+            ? defaultImageRef.current.value
+            : reverseImageRef.current.value,
+        job: jobRef.current.value,
+        tel: telRef.current.value,
+        email: emailRef.current.value,
+    };
+        fetch(`http://localhost:8080/api/profiles/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedProfile)
+        })
+        .then(res => res.json())
+        .then(updatedProfile => {
+            setCardData(cardData.map(card => card.id === updatedProfile.id ? updatedProfile : card));
+            alert("프로필이 수정되었습니다.");
+            navigate("/profile/list");
+        })
+        .catch(err => {
+            alert("수정 실패: " + err.message);
+        });
 
     };
     return (

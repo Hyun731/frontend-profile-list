@@ -3,14 +3,21 @@ import ProfileLayout from "./pages/ProfileLayout"
 import ProfileList from "./components/ProfileList"
 import ProfileForm from "./components/ProfileForm"
 import ProfileModify from "./components/ProfileModify"
-import cardData from "./data/cardData"
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
 
 
 function App() {
-  const [cards, setCardData] = useState(cardData);
+  const [cards, setCardData] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8080/api/profiles')
+      .then(res => res.json())
+      .then(data => setCardData(data))
+      .catch(err => console.error(err));
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>
